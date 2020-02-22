@@ -14,7 +14,7 @@ public class Task2 {
      */
     double getFractionalPart(double realNumber) {
         int a = (int)realNumber;
-        return realNumber-a;
+        return realNumber - a;
 
     }
 
@@ -29,14 +29,12 @@ public class Task2 {
      * Даны 2 целых числа. Проверьте равны ли они
      */
     boolean testIfIntsEqual(Integer a, Integer b) {
-        if (a-b==0)
-            {
-                return true;
-            }
-        else
-            {
-                return false;
-            }
+        if (a - b == 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     /**
@@ -49,10 +47,10 @@ public class Task2 {
      * @param inclusively входят ли границы в заданный даипазон
      */
     boolean numberInRange(Integer number, Integer leftBound, Integer rightBound, Boolean inclusively) {
-        if(number==null || leftBound==null || rightBound == null || inclusively == null){return false;}
-        if(number > leftBound && number <rightBound){return true;}
-        else if ((number==leftBound || number==rightBound )&& inclusively==true){return true;}
-            else {return false;}
+        if(number == null || leftBound == null || rightBound == null || inclusively == null) { return false; }
+        if(number > leftBound && number < rightBound) { return true; }
+        else if ((number == leftBound || number == rightBound )&& inclusively == true) { return true; }
+        else { return false; }
 
     }
 
@@ -61,26 +59,24 @@ public class Task2 {
      */
     boolean atLeastOneIsDigit(char c1, char c2, char c3) {
         int[] arr = new int [3];
-        arr[0] = c1-'0';
-        arr[1]=c2- '0';
-        arr[2]=c3 - '0';
-        for (int i=0 ; i<3 ; i++ ) {
+        arr[0] = c1 - '0';
+        arr[1] = c2 - '0';
+        arr[2] = c3 - '0';
+        for (int i = 0 ; i < 3 ; i++) {
             for (int j = 0; j <= 9; j++) {
                 if (arr[i] == j) {
                     return true;
                 }
             }
         }
-        return  false;
-
+        return false;
     }
 
     /**
      * Даны два вещественных числа. Определите равны ли они
      */
     boolean areRealNumbersEqual(double a, double b) {
-        double maxRelDiff =1e-5;
-
+        double maxRelDiff = 1e-5;
 
         double diff = (Math.abs(a) - Math.abs(b));
         a = Math.abs(a);
@@ -91,7 +87,6 @@ public class Task2 {
             return true;
 
         return false;
-
     }
 
     /**
@@ -105,15 +100,12 @@ public class Task2 {
      * Дано натуральное число N <= 10000. Выведите следующее после N четное число. Например: N = 8, Result = 10
      */
     int nextEvenNumber(int n) {
-        if(n%2 == 0)
-            {
-                return  n+2;
-            }
-        else
-            {
-                return n+1;
-            }
-
+        if(n%2 == 0) {
+            return  n+2;
+        }
+        else {
+            return n+1;
+        }
     }
 
     /**
@@ -123,8 +115,7 @@ public class Task2 {
      * своем кабинете
      */
     int schoolDesks(int num1, int num2, int num3) {
-        int num=((num1+num1%2)/2)+((num2+num2%2)/2)+((num3+num3%2)/2);
-
+        int num=((num1+num1%2) / 2) + ((num2+num2%2) / 2) + ((num3+num3%2) / 2);
         return num;
     }
 
@@ -135,5 +126,4 @@ public class Task2 {
         int res = (N%10 ^ N%100/10);
         return res;
     }
-
 }
